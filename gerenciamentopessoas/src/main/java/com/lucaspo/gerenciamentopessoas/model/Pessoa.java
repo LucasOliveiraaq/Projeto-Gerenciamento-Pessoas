@@ -2,6 +2,7 @@ package com.lucaspo.gerenciamentopessoas.model;
 
 import java.util.GregorianCalendar;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -23,6 +24,7 @@ public class Pessoa {
 	@Id
 	@GeneratedValue(strategy = GenerationType.UUID)
 	private String id;
-	private String nome;
+	@Column(nullable = false)
+	private String nomeCompleto;
 	private GregorianCalendar dataDeNascimento;
 }
