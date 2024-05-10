@@ -11,6 +11,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -19,7 +20,6 @@ import lombok.Setter;
 @Table(name = "endereco")
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
 public class Endereco {
 
@@ -40,4 +40,18 @@ public class Endereco {
 	@JoinColumn(name = "pessoa_id", nullable = false)
 	private Pessoa pessoa;
 	private boolean principal;
+	
+	@Builder
+	public Endereco(String id, String logradouro, String cep, int numero, String cidade, String estado, Pessoa pessoa, boolean principal) {
+		this.id = id;
+		this.logradouro = logradouro;
+		this.cep = cep;
+		this.numero = numero;
+		this.cidade = cidade;
+		this.estado = estado;
+		this.pessoa = pessoa;
+		this.principal = principal;
+	}
+	
+	
 }
