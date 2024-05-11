@@ -1,5 +1,8 @@
 package com.lucaspo.gerenciamentopessoas.util;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import org.springframework.stereotype.Component;
 
 import com.lucaspo.gerenciamentopessoas.dto.request.PessoaRequestDTO;
@@ -19,4 +22,14 @@ public class PessoaMapper {
 	public PessoaResponseDTO returnPessoaDTO(Pessoa pessoa) {
 		return new PessoaResponseDTO(pessoa);
 	}
+	
+	public List<PessoaResponseDTO> listPessoaDTO(List<Pessoa> list){
+		return list.stream().map(PessoaResponseDTO::new).collect(Collectors.toList());
+	}
+	
+	public void updatePessoa(Pessoa pessoa, PessoaRequestDTO pessoaRequestDTO) {
+		pessoa.setNomeCompleto(pessoaRequestDTO.getNomeCompleto());
+		pessoa.setDataDeNascimento(pessoaRequestDTO.getDataDeNascimento());
+	}
+	
 }

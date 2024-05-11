@@ -1,5 +1,7 @@
 package com.lucaspo.gerenciamentopessoas.service;
 
+import java.util.List;
+
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
@@ -22,6 +24,28 @@ public class PessoaServiceImpl implements PessoaService{
 	@Override
 	public PessoaResponseDTO criarPessoa(PessoaRequestDTO pessoaRequestDTO) {
 		Pessoa pessoa = pessoaMapper.criarPessoa(pessoaRequestDTO);
+		return pessoaMapper.returnPessoaDTO(pessoaRepository.save(pessoa));
+	}
+
+	@Override
+	public PessoaResponseDTO findById(String id) {
+		return pessoaMapper.returnPessoaDTO(returnPessoaId(id));
+	}
+	
+	private Pessoa returnPessoaId(String id) {
+		return pessoaRepository.findById(id)
+				.orElseThrow(() -> new RuntimeException("Id da pessoa não existe"));
+	}
+
+	@Override
+	public List<PessoaResponseDTO> findAll() {
+		return pessoaMapper.listPessoaDTO(pessoaRepository.findAll());
+	}
+
+	@Override
+	public PessoaResponseDTO update(String id, PessoaRequestDTO pessoaRequestDTO) {
+		Pessoa pessoa = returnPessoaId(id);
+		pessoaMapper.updatePessoa(pessoa, pessoaRequestDTO);
 		return pessoaMapper.returnPessoaDTO(pessoaRepository.save(pessoa));
 	}
 
