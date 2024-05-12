@@ -31,5 +31,4 @@ public class PessoaMapper {
 		pessoa.setNomeCompleto(pessoaRequestDTO.getNomeCompleto());
 		pessoa.setDataDeNascimento(pessoaRequestDTO.getDataDeNascimento());
 	}
-	
 }
