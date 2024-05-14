@@ -39,4 +39,17 @@ public class EnderecoController {
 	public ResponseEntity<List<EnderecoResponseDTO>> findAll() {
 		return ResponseEntity.ok().body(enderecoService.findAll());
 	}
+	
+	@GetMapping("/pessoa/{pessoa_id}")
+	public ResponseEntity<List<EnderecoResponseDTO>> findAllByPessoaId(@PathVariable String pessoa_id){
+		List<EnderecoResponseDTO> list = enderecoService.findByPessoa_id(pessoa_id); 
+		return ResponseEntity.ok(list);
+	}
+	
+	@GetMapping("/pessoa/{pessoa_id}/principal")
+	public ResponseEntity<EnderecoResponseDTO> findPrincipalByPessoaId(@PathVariable("pessoa_id") String pessoaId) {
+	    EnderecoResponseDTO enderecoResponseDTO = enderecoService.findByPessoaIdAndPrincipalIsTrue(pessoaId);
+	    return ResponseEntity.ok(enderecoResponseDTO);
+	}
+
 }
