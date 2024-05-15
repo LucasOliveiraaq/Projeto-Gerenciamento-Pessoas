@@ -12,5 +12,6 @@ public interface EnderecoService {
 	List<EnderecoResponseDTO> findAll();
 	List<EnderecoResponseDTO> findByPessoa_id(String pessoa_id);
 	EnderecoResponseDTO findByPessoaIdAndPrincipalIsTrue(String pessoa_id);
+	void cadastrarEnderecoPrincipal(String enderecoId);
 	
 }

@@ -69,4 +69,11 @@ public class EnderecoServiceImpl implements EnderecoService {
 			 throw new NoSuchElementException("Nenhum endereço marcado como principal para a pessoa com ID: " + pessoa_id);
 		}
 	}
+	
+	public void cadastrarEnderecoPrincipal(String enderecoId) {
+		Endereco endereco = enderecoRepository.findById(enderecoId)
+											  .orElseThrow(() -> new RuntimeException("Endereço não encontrado"));
+		endereco.setPrincipal(true);
+		enderecoRepository.save(endereco);
+	}
 }
