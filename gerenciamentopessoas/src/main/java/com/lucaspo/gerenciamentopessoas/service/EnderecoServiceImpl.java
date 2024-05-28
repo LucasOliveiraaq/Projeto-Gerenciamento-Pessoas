@@ -10,6 +10,8 @@ import org.springframework.stereotype.Service;
 
 import com.lucaspo.gerenciamentopessoas.dto.request.EnderecoRequestDTO;
 import com.lucaspo.gerenciamentopessoas.dto.response.EnderecoResponseDTO;
+import com.lucaspo.gerenciamentopessoas.exceptions.EnderecoException;
+import com.lucaspo.gerenciamentopessoas.exceptions.NotFoundIdException;
 import com.lucaspo.gerenciamentopessoas.model.Endereco;
 import com.lucaspo.gerenciamentopessoas.model.Pessoa;
 import com.lucaspo.gerenciamentopessoas.repositories.EnderecoRepository;
@@ -37,7 +39,7 @@ public class EnderecoServiceImpl implements EnderecoService {
 	public Pessoa verificarPessoaParaEndereco(String id) {
 		Optional<Pessoa> pessoaOptional = pessoaRepository.findById(id);
 		return pessoaOptional
-				.orElseThrow(() -> new NoSuchElementException("Não existe esse" + id + " na tabela pessoa"));
+				.orElseThrow(() -> new NotFoundIdException("Não existe esse " + id + " na tabela pessoa"));
 	}
 
 	@Override
@@ -46,7 +48,7 @@ public class EnderecoServiceImpl implements EnderecoService {
 	}
 
 	private Endereco returnEnderecoId(String id) {
-		return enderecoRepository.findById(id).orElseThrow(() -> new RuntimeException("Id do endereco não existe"));
+		return enderecoRepository.findById(id).orElseThrow(() -> new NotFoundIdException("Id do endereco não existe"));
 	}
 
 	@Override
@@ -66,13 +68,13 @@ public class EnderecoServiceImpl implements EnderecoService {
 		if(!list.isEmpty()) {
 			return new EnderecoResponseDTO(list.get(0));
 		} else {
-			 throw new NoSuchElementException("Nenhum endereço marcado como principal para a pessoa com ID: " + pessoa_id);
+			 throw new NotFoundIdException("Nenhum endereço marcado como principal para a pessoa com ID: " + pessoa_id);
 		}
 	}
 	
 	public void cadastrarEnderecoPrincipal(String enderecoId) {
 		Endereco endereco = enderecoRepository.findById(enderecoId)
-											  .orElseThrow(() -> new RuntimeException("Endereço não encontrado"));
+											  .orElseThrow(() -> new EnderecoException("Endereço não encontrado"));
 		endereco.setPrincipal(true);
 		enderecoRepository.save(endereco);
 	}
