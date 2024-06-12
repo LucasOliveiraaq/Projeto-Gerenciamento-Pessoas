@@ -39,7 +39,7 @@ public class JwtTokenService {
 					 .withIssuer(ISSUER)
 					 .build()
 					 .verify(token) //verifica a validade do token
-					 .getSubject();
+					 .getSubject(); //assunto do token no causo vai ser nome do usuario
 		} catch (JWTVerificationException exception) {
 			throw new JWTVerificationException("Token inválido ou expirado.");
 		}
