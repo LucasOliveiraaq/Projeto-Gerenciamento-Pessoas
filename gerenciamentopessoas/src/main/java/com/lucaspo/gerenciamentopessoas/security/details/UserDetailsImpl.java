@@ -1,4 +1,4 @@
-package com.lucaspo.gerenciamentopessoas.config.details;
+package com.lucaspo.gerenciamentopessoas.security.details;
 
 import java.util.Collection;
 import java.util.stream.Collectors;

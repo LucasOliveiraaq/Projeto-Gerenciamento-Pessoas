@@ -1,4 +1,4 @@
-package com.lucaspo.gerenciamentopessoas.config.details;
+package com.lucaspo.gerenciamentopessoas.security.details;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
