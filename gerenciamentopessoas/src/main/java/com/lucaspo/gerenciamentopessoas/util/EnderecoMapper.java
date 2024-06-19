@@ -5,8 +5,8 @@ import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Component;
 
-import com.lucaspo.gerenciamentopessoas.dto.request.EnderecoRequestDTO;
-import com.lucaspo.gerenciamentopessoas.dto.response.EnderecoResponseDTO;
+import com.lucaspo.gerenciamentopessoas.dto.request.endereco.EnderecoRequestDTO;
+import com.lucaspo.gerenciamentopessoas.dto.response.endereco.EnderecoResponseDTO;
 import com.lucaspo.gerenciamentopessoas.model.Endereco;
 
 @Component

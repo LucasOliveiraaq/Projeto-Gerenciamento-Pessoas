@@ -5,8 +5,8 @@ import java.util.List;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
-import com.lucaspo.gerenciamentopessoas.dto.request.PessoaRequestDTO;
-import com.lucaspo.gerenciamentopessoas.dto.response.PessoaResponseDTO;
+import com.lucaspo.gerenciamentopessoas.dto.request.pessoa.PessoaRequestDTO;
+import com.lucaspo.gerenciamentopessoas.dto.response.pessoa.PessoaResponseDTO;
 import com.lucaspo.gerenciamentopessoas.exceptions.NotFoundIdException;
 import com.lucaspo.gerenciamentopessoas.model.Pessoa;
 import com.lucaspo.gerenciamentopessoas.repositories.PessoaRepository;

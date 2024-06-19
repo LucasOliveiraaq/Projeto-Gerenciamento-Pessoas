@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.lucaspo.gerenciamentopessoas.dto.request.EnderecoRequestDTO;
-import com.lucaspo.gerenciamentopessoas.dto.response.EnderecoResponseDTO;
+import com.lucaspo.gerenciamentopessoas.dto.request.endereco.EnderecoRequestDTO;
+import com.lucaspo.gerenciamentopessoas.dto.response.endereco.EnderecoResponseDTO;
 import com.lucaspo.gerenciamentopessoas.service.EnderecoService;
 
 import lombok.RequiredArgsConstructor;

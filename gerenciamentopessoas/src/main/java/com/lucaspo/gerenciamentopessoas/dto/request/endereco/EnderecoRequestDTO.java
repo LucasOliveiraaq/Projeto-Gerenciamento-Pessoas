@@ -1,4 +1,4 @@
-package com.lucaspo.gerenciamentopessoas.dto.request;
+package com.lucaspo.gerenciamentopessoas.dto.request.endereco;
 
 import com.lucaspo.gerenciamentopessoas.model.Pessoa;
 

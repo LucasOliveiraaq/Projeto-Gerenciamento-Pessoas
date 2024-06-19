@@ -5,8 +5,8 @@ import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Component;
 
-import com.lucaspo.gerenciamentopessoas.dto.request.PessoaRequestDTO;
-import com.lucaspo.gerenciamentopessoas.dto.response.PessoaResponseDTO;
+import com.lucaspo.gerenciamentopessoas.dto.request.pessoa.PessoaRequestDTO;
+import com.lucaspo.gerenciamentopessoas.dto.response.pessoa.PessoaResponseDTO;
 import com.lucaspo.gerenciamentopessoas.model.Pessoa;
 
 @Component

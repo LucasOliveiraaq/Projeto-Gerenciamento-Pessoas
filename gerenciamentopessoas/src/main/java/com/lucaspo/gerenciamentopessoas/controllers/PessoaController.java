@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.lucaspo.gerenciamentopessoas.dto.request.PessoaRequestDTO;
-import com.lucaspo.gerenciamentopessoas.dto.response.PessoaResponseDTO;
+import com.lucaspo.gerenciamentopessoas.dto.request.pessoa.PessoaRequestDTO;
+import com.lucaspo.gerenciamentopessoas.dto.response.pessoa.PessoaResponseDTO;
 import com.lucaspo.gerenciamentopessoas.service.PessoaService;
 
 import lombok.RequiredArgsConstructor;

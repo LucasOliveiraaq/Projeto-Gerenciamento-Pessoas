@@ -8,8 +8,8 @@ import java.util.stream.Collectors;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
-import com.lucaspo.gerenciamentopessoas.dto.request.EnderecoRequestDTO;
-import com.lucaspo.gerenciamentopessoas.dto.response.EnderecoResponseDTO;
+import com.lucaspo.gerenciamentopessoas.dto.request.endereco.EnderecoRequestDTO;
+import com.lucaspo.gerenciamentopessoas.dto.response.endereco.EnderecoResponseDTO;
 import com.lucaspo.gerenciamentopessoas.exceptions.EnderecoException;
 import com.lucaspo.gerenciamentopessoas.exceptions.NotFoundIdException;
 import com.lucaspo.gerenciamentopessoas.model.Endereco;

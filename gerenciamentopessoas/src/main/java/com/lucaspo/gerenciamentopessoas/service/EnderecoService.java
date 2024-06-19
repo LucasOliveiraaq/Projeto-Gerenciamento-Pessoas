@@ -2,8 +2,8 @@ package com.lucaspo.gerenciamentopessoas.service;
 
 import java.util.List;
 
-import com.lucaspo.gerenciamentopessoas.dto.request.EnderecoRequestDTO;
-import com.lucaspo.gerenciamentopessoas.dto.response.EnderecoResponseDTO;
+import com.lucaspo.gerenciamentopessoas.dto.request.endereco.EnderecoRequestDTO;
+import com.lucaspo.gerenciamentopessoas.dto.response.endereco.EnderecoResponseDTO;
 
 public interface EnderecoService {
 

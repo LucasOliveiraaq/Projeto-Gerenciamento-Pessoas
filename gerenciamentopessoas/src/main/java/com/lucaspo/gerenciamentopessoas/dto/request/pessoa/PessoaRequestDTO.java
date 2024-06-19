@@ -1,4 +1,4 @@
-package com.lucaspo.gerenciamentopessoas.dto.request;
+package com.lucaspo.gerenciamentopessoas.dto.request.pessoa;
 
 import java.util.GregorianCalendar;
 

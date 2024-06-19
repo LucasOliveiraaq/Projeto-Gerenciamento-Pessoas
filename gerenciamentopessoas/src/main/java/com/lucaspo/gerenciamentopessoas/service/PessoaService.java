@@ -2,8 +2,8 @@ package com.lucaspo.gerenciamentopessoas.service;
 
 import java.util.List;
 
-import com.lucaspo.gerenciamentopessoas.dto.request.PessoaRequestDTO;
-import com.lucaspo.gerenciamentopessoas.dto.response.PessoaResponseDTO;
+import com.lucaspo.gerenciamentopessoas.dto.request.pessoa.PessoaRequestDTO;
+import com.lucaspo.gerenciamentopessoas.dto.response.pessoa.PessoaResponseDTO;
 
 public interface PessoaService {
 
