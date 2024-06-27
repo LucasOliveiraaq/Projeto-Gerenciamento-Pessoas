@@ -9,11 +9,13 @@ import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.lucaspo.gerenciamentopessoas.dto.request.endereco.EnderecoRequestDTO;
 import com.lucaspo.gerenciamentopessoas.dto.response.endereco.EnderecoResponseDTO;
+import com.lucaspo.gerenciamentopessoas.security.authentication.JwtTokenService;
 import com.lucaspo.gerenciamentopessoas.service.EnderecoService;
 
 import lombok.RequiredArgsConstructor;
@@ -24,6 +26,7 @@ import lombok.RequiredArgsConstructor;
 public class EnderecoController {
 
 	private final EnderecoService enderecoService;
+	private final JwtTokenService jwtTokenService;
 	
 	@PostMapping
 	public ResponseEntity<EnderecoResponseDTO> register(@RequestBody EnderecoRequestDTO enderecoRequestDTO){

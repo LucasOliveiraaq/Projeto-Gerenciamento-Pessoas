@@ -28,11 +28,15 @@ public class SecurityConfiguration {
     };
 
     public static final String[] ENDPOINTS_WITH_AUTHENTICATION_REQUIRED = {
-            // Adicione endpoints que requerem autenticação aqui
+    		"/endereco",
+    		"/pessoa"
     };
 
     public static final String[] ENDPOINTS_CUSTOMER = {
-        // Adicione endpoints que podem ser acessados por clientes aqui
+    		"/endereco",
+    		"/pessoa",
+    		 "/users/login",
+             "/users"
     };
 
     public static final String[] ENDPOINTS_ADMIN = {
